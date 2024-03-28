@@ -266,7 +266,7 @@ export class UserService {
           id,
         },
         data: {
-          banned: true,
+          banned: false,
           banReason: null,
         },
       });
