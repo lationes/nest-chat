@@ -1,12 +1,11 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ConfigService } from '@nestjs/config';
+import * as process from 'process';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
-  const configService = app.get(ConfigService);
-  const PORT = configService.get<number>('PORT') || 5000;
+  const PORT = process.env.PORT || 5000;
   const config = new DocumentBuilder()
     .setTitle('Api for chat with authorization')
     .setDescription('Endpoints for chat')
