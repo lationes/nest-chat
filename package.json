@@ -21,7 +21,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "setup": "prisma generate && dotenv -e .production.env prisma migrate deploy",
     "setup:dev": "prisma generate && dotenv -e .development.env prisma migrate deploy",
-    "prisma:studio": "prisma studio --port 7000"
+    "prisma:studio": "dotenv -e .development.env prisma studio --port 7000"
   },
   "dependencies": {
     "@nestjs-modules/mailer": "^1.11.2",
