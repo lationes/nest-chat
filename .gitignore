@@ -6,6 +6,7 @@
 .env
 .production.env
 .development.env
+.docker.env
 
 # Logs
 logs

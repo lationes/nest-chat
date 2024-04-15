@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  chat-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chat-api
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres-chat
+    env_file:
+      - .docker.env
+
+  postgres-chat:
+    image: postgres:13
+    container_name: postgres-chat
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - .docker.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
+    name: nest-prisma-docker-db

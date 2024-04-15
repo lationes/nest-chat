@@ -9,6 +9,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "npm run setup && cross-env NODE_ENV=production nest start",
+    "docker:up": "docker compose up",
     "start:dev": "npm run setup:dev && cross-env NODE_ENV=development nest start",
     "start:watch": "npm run setup:dev && cross-env NODE_ENV=development nest start --watch",
     "start:debug": "npm run setup:dev && cross-env NODE_ENV=development nest start --debug --watch",
