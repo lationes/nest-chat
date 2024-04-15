@@ -1,21 +1,21 @@
 version: '3.8'
 services:
-  nest-api:
+  chat-api:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: nest-api
+    container_name: chat-api
     restart: always
     ports:
       - 3000:3000
     depends_on:
-      - postgres
+      - postgreschat
     env_file:
       - .docker.env
 
-  postgres:
+  postgres-chat:
     image: postgres:13
-    container_name: postgresprisma
+    container_name: postgres-chat
     restart: always
     ports:
       - 5432:5432
