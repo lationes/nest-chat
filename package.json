@@ -11,6 +11,7 @@
     "start": "npm run setup && cross-env NODE_ENV=production nest start",
     "docker:up": "docker compose up",
     "start:dev": "npm run setup:dev && cross-env NODE_ENV=development nest start",
+    "start:docker": "npm run setup:docker && cross-env NODE_ENV=docker nest start",
     "start:watch": "npm run setup:dev && cross-env NODE_ENV=development nest start --watch",
     "start:debug": "npm run setup:dev && cross-env NODE_ENV=development nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -22,6 +23,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "setup": "prisma generate && dotenv -e .production.env prisma migrate deploy",
     "setup:dev": "prisma generate && dotenv -e .development.env prisma migrate deploy",
+    "setup:docker": "prisma generate && dotenv -e .docker.env prisma migrate deploy",
     "prisma:studio": "dotenv -e .development.env prisma studio --port 7000"
   },
   "dependencies": {
